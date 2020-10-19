@@ -18,7 +18,7 @@ const admin = require('firebase-admin');
 const serviceAccount = require('./config/creative-agencyyy-firebase-adminsdk-kmooa-0173371ada.json');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://creative-agencyyy.firebaseio.com"
+  databaseURL: process.env.FIRE_URL
 });
 
 const MongoClient = require('mongodb').MongoClient;
