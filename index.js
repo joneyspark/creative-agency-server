@@ -253,4 +253,4 @@ app.get('/', (req, res)=>{
     res.send("Hello World");
 })
 
-app.listen(process.env.PORT, ()=>console.log("Port is Listening 4000"));
+app.listen(process.env.PORT || 4000, ()=>console.log("Port is Listening 4000"));
