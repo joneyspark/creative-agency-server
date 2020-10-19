@@ -22,15 +22,15 @@ admin.initializeApp({
 });
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.po85n.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://creativeAgency:ZUUQbzCeboLgX8Kx@cluster0.po85n.mongodb.net/creativeAgency?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(err => {
-  const Orderscollection = client.db(process.env.DB_NAME).collection("Orders");
-  const ServicesCollection = client.db(process.env.DB_NAME).collection("Services");
-  const ReviewCollection = client.db(process.env.DB_NAME).collection("Reviews");
-  const UsersCollection = client.db(process.env.DB_NAME).collection("Users");
+  const Orderscollection = client.db('creativeAgency').collection("Orders");
+  const ServicesCollection = client.db('creativeAgency').collection("Services");
+  const ReviewCollection = client.db('creativeAgency').collection("Reviews");
+  const UsersCollection = client.db('creativeAgency').collection("Users");
   
   app.post('/addOrder', (req, res) => {
       const file = req.files.file;
@@ -253,4 +253,4 @@ app.get('/', (req, res)=>{
     res.send("Hello World");
 })
 
-app.listen(process.env.PORT, ()=>console.log("Port is Listening 4000"));
+app.listen(4000, ()=>console.log("Port is Listening 4000"));
